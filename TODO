@@ -1,0 +1,4 @@
+* install.sh:
+   - download and install checkstyle if not present
+   - download and install ctags if not present
+   - download and install vim if the required version is not present (...)
