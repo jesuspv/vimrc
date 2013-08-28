@@ -1,5 +1,7 @@
 " vim:fdm=marker
-
+" ---------------------------------------
+" Jesus Pardillo's Vim Configuration File
+" ---------------------------------------
 " Cheat sheet {{{
 " <Esc>K: man page for current word
 " Tabbing ----------------------------------------------------------------
