@@ -82,7 +82,7 @@ set hidden " buffers can be changed without saving
 set mouse=a " use mouse everywhere
 
 set wildmenu " turn on command line completion wild style
-set wildignore=*.o,*.a,*.bak
+set wildignore=*.o,*.a,*.bak,*.o.d,*/target/*,*.orig
 set wildmode=list:longest " turn on wild mode huge list
 
 set whichwrap+=<,>,[,]
