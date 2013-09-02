@@ -74,8 +74,8 @@ set nocompatible " stops crying when no vi-compatible feature is called
 
 set backspace=indent,eol,start " make backspace a more flexible
 set backup " make backup files
-set backupdir=~/.vim/backup,~/.backup,~/backup      " where to put backup files
-set directory=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp " where to place swap files in
+set backupdir=~/backup,~/.backup,~/.vim/backup,       " where to put backup files
+set directory=~/tmp,~/.tmp,~/.vim/tmp,/tmp,~/.vim/tmp " where to place swap files in
 
 set hidden " buffers can be changed without saving
 

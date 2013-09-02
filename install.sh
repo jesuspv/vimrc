@@ -26,4 +26,8 @@ if [[ ! -f $HOME/.fonts/Inconsolata.otf ]]; then
    cd - > /dev/null
 fi
 
+# working directories
+mkdir -p $REPOS_DIR/backup
+mkdir -p $REPOS_DIR/tmp
+
 echo "installation finished"
