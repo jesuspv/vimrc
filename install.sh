@@ -1,20 +1,22 @@
 #!/bin/bash
 
 # install config files
-REPOS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REPOS_DIR=$(dirname "`readlink -f "${BASH_SOURCE[0]}"`")
 CFG_FILES="vimrc gvimrc"
 for FILE in vim $CFG_FILES; do
-   [[ -h $HOME/.$FILE ]] && unlink $HOME/.$FILE
-   [[ -f $HOME/.$FILE ]] && mv -f $HOME/.$FILE $HOME/.$FILE.LAST
-   ln -s $REPOS_DIR/$FILE $HOME/.$FILE
+   [[ -h ~/.$FILE ]] && unlink ~/.$FILE
+   [[ -f ~/.$FILE ]] && mv -f ~/.$FILE ~/.$FILE.last \
+                     && echo "$FILE backed up as $FILE.last"
+   ln -s $REPOS_DIR/$FILE ~/.$FILE
+   echo "$FILE installed"
 done
 
 # install fonts
-if [[ ! -f $HOME/.fonts/Inconsolata.otf ]]; then
+if [[ ! -f ~/.fonts/Inconsolata.otf ]]; then
    URL="http://levien.com/type/myfonts/Inconsolata.otf"
-   mkdir -p $HOME/.fonts
+   mkdir -p ~/.fonts
 
-   cd $HOME/.fonts
+   cd ~/.fonts
 
    wget --quite $URL 2> /dev/null || curl --silent --remote-name $URL
    if [ $? -ne 0 ]; then
