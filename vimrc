@@ -68,6 +68,30 @@
 " Find *.xyz : similar command
 " args **/*.[ch] : open files matching the pattern
 " r!<command> : read output from a shell command
+" (INSERT) <Ctrl-V>126 : insert ~
+" :only : close all other split screens
+" gi g; : go to last insert / change
+" ( ) { } : move through setences / paragraphs pair
+"
+" You can use a whole set of commands to change text inside brackets / parentheses / quotation marks/ tags.
+" It's super useful to avoid having to find the start and finish of the group.
+" Try ci(, ci{, ci<, ci", ci', ct depending on what kind of object you want to change.
+" And the ca(, ca{, ... variants delete the brackets / quotation marks as well. (same works for d y v)
+" Easy to remember: change inside a bracketed statement / change a bracketed statement.
+"
+" ^wi: Jump to the tag under the cursor by splitting the window.
+" cib/ciB: Change the text inside the current set of parenthesis () or braces {}, respectively.
+"
+" ^r^w to paste the word under cursor in the command mode. Really useful when using grep or replace commands
+"
+" Until [character] (t). Useful for any command which accepts a range. My
+" favorite is ct; or ct) which deletes everything up to the trailing semicolon
+" / closing parentheses and then places you in insert mode.
+"
+" <Ctrl-P>/<Ctrl-N>: autocomplete
+" :x #(Save and Quit a File)
+" :help index
+" :ct) : change text unTil )
 " }}}
 " General {{{
 set nocompatible " stops crying when no vi-compatible feature is called
@@ -112,7 +136,7 @@ runtime macros/matchit.vim " % switch between opening & closing bracketsj
 
 set title " set the title in console
 
-set scrolloff=2 " scrolling ... lines near borders
+set scrolloff=999 " scrolling ... cursor in the middle (=2 for lines near borders)
 
 let mapleader = ","
 nore . :
@@ -320,7 +344,7 @@ hi User5 guifg=#eeee40 guibg=#222222
 set statusline=%n%{v:register}\ %<%f%m%r\ \[%{&ff}:%{&fenc}:%Y]%=%c%V,%l\/%L\ 0x%04B\ %P
 " TODO change color according mode
 " }}}
-" {{{ Searching 
+" {{{ Searching
 set ignorecase " ignore case when you search
 set infercase " case inferred by default
 set incsearch  " show results while you type
