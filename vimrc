@@ -136,7 +136,7 @@ runtime macros/matchit.vim " % switch between opening & closing bracketsj
 
 set title " set the title in console
 
-set scrolloff=999 " scrolling ... cursor in the middle (=2 for lines near borders)
+set scrolloff=2 " scrolling ... for lines near borders (=999 cursor in the middle)
 
 let mapleader = ","
 nore . :
